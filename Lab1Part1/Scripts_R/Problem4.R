@@ -1,8 +1,9 @@
-fb1<-read.csv(file.choose())
-aapl1<-read.csv(file.choose())
+fb1<-read.csv("../Test_Data/FB.csv")
+aapl1<-read.csv("../Test_Data/AAPL.csv")
 
 par(bg="cornsilk")
-plot(aapl1$Adj.Close, col="blue", type="o", ylim=c(0,100), xlab="Days", ylab="Price" ) lines(fb1$Adj.Close, type="o", pch=22, lty=2, col="red")
+plot(aapl1$Adj.Close, col="blue", type="o", ylim=c(0,100), xlab="Days", ylab="Price" ) 
+lines(fb1$Adj.Close, type="o", pch=22, lty=2, col="red")
 legend("topright", inset=.05, c("Apple","Facebook"), fill=c("blue","red"), horiz=TRUE)
 
 hist(aapl1$Adj.Close, col=rainbow(8))
