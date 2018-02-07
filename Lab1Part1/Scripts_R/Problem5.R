@@ -1,12 +1,15 @@
+# Need to verify mpg
+
 data()
-attach(mpg)
-head(mpg)
-summary(mpg)
+#attach(UKgas)
+head(UKgas)
+summary(UKgas)
 #after analysis remove the data from the memory detach(mpg)
 
-detach(mpg)
+#detach(UKgas)
 
 
-library (help=datasets) library(datasets)
-head(uspop)
-plot(uspop)
+library (help=datasets) 
+library(datasets)
+head(UKgas)
+plot(UKgas)
