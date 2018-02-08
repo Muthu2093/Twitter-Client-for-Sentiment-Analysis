@@ -8,7 +8,6 @@ par(bg="cornsilk")
 
 plot(sales1, col="blue", type="o", ylim=c(0,100), xlab="Month", ylab="Sales" )
 title(main="Sales by Month")
-
 lines(sales2, type="o", pch=22, lty=2, col="red")
 grid(nx=NA, ny=NULL)
 legend("topright", inset=.05, c("Sales1","Sales2"), fill=c("blue","red"), horiz=TRUE)

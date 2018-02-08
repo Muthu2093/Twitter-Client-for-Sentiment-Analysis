@@ -1,8 +1,8 @@
 #Problem 4
 #Comparison of data in csv files
 
-fb1<-read.csv("./Test_Data/FB.csv")
-aapl1<-read.csv("./Test_Data/AAPL.csv")
+fb1<-read.csv("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part1/Test_Data/FB.csv")
+aapl1<-read.csv("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part1/Test_Data/AAPL.csv")
 
 par(bg="cornsilk")
 plot(aapl1$Adj.Close, col="blue", type="o", ylim=c(150,200), xlab="Days", ylab="Price" ) 
