@@ -1,4 +1,4 @@
-#Need to check how to convert geocode of location - geocode()
+# Using ggmap function to plot location of places
 
 library("ggmap")
 library("maptools")

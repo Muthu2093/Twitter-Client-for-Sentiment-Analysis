@@ -1,3 +1,5 @@
+#Comparison of data in csv files
+
 fb1<-read.csv("./Test_Data/FB.csv")
 aapl1<-read.csv("./Test_Data/AAPL.csv")
 

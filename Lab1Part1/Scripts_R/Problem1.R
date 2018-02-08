@@ -1,3 +1,6 @@
+# Basic plot function to visualize sales1 and sales2 data
+# Sales2 produce different dataset everytime the problem is run
+
 sales1<-c(12,14,16,29,30,45,19,20,16, 19, 34, 20)
 sales2<-rpois(12,34) # random numbers, Poisson distribution, mean at 34, 12 numbers 
 par(bg="cornsilk")

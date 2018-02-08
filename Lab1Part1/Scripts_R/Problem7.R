@@ -1,4 +1,6 @@
-#Repeat the data with some other rich data set from Rpackage
+#Scatter plots 
+
+
 library(lattice)
 splom(mtcars[c(1,3,4,5,6)], main="MTCARS Data")
 splom(mtcars[c(1,3,4,6)], main="MTCARS Data")

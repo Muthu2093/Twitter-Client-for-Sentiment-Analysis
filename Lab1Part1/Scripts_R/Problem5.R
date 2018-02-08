@@ -1,4 +1,6 @@
-# Using UKgas dataset. attach and detach is commented since it is not a list, data frame or environment
+# Exploring dataset in R
+# Using UKgas dataset. 
+# Attach and Detach is commented since it is not a list, data frame or environment
 
 data()
 #attach(UKgas)
