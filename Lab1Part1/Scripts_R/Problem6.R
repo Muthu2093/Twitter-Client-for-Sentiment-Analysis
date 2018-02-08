@@ -1,3 +1,4 @@
+# Problem 6
 # Using ggmap function to plot location of places
 
 library("ggmap")
