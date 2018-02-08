@@ -1,13 +1,10 @@
-# Need to verify mpg
+# Using UKgas dataset. attach and detach is commented since it is not a list, data frame or environment
 
 data()
 #attach(UKgas)
 head(UKgas)
 summary(UKgas)
-#after analysis remove the data from the memory detach(mpg)
-
 #detach(UKgas)
-
 
 library (help=datasets) 
 library(datasets)

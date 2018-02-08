@@ -3,7 +3,7 @@
 library("ggmap")
 library("maptools")
 library(maps)
-visited <- c("SFO", "Buffalo", "London", "Melbourne", "Lima, Peru","Johannesburg, SA")
+visited <- c("SFO", "Chennai", "Melbourne", "Sydney", "Lima, Peru","Bangalor", "San Jose")
 ll.visited <- geocode(visited)
 visit.x <- ll.visited$lon
 visit.y <- ll.visited$lat

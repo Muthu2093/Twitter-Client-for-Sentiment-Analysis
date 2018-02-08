@@ -1,5 +1,5 @@
-fb1<-read.csv("../Test_Data/FB.csv")
-aapl1<-read.csv("../Test_Data/AAPL.csv")
+fb1<-read.csv("./Test_Data/FB.csv")
+aapl1<-read.csv("./Test_Data/AAPL.csv")
 
 par(bg="cornsilk")
 plot(aapl1$Adj.Close, col="blue", type="o", ylim=c(0,100), xlab="Days", ylab="Price" ) 
