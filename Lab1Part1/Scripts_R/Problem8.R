@@ -29,4 +29,3 @@ data3<-subset(data1,scode=="NoImps")
 head(data3)
 clen<-function(x){c(length(x))}
 etable<-summaryBy(Impressions~scode+Gender+agecat,data=data1,FUN=clen)
-geom_bar() + coord_flip()
