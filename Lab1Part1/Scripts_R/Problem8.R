@@ -1,6 +1,6 @@
-# Working with ggplot()
-
-# Import data
+## Probblem 8 Working with ggplot()
+## Dataset name - "problem8Dataset.txt" present in Test_Data folder.... Relative path already included
+############# 1. Code taken from the Lab website - RCodeFeb7.txt #############
 
 smokes = c("Y","N","N","Y","N","Y","Y","Y","N","Y")
 amount = c(1,2,2,3,3,1,2,1,3,2)
@@ -29,3 +29,35 @@ data3<-subset(data1,scode=="NoImps")
 head(data3)
 clen<-function(x){c(length(x))}
 etable<-summaryBy(Impressions~scode+Gender+agecat,data=data1,FUN=clen)
+
+
+
+
+
+###################### Problem suggested by professor in piazza ###########################
+# link to code: http://rstudio-pubs-static.s3.amazonaws.com/3256_bb10db1440724dac8fa40da5e658ada5.html
+
+TTM <- read.delim("../Test_Data/ggplotDataset.txt")
+head(TTM)
+tail(TTM)
+# Plot the basic frame of the stacked bar chart.
+library(ggplot2)
+ggplot(data = TTM, aes(x = Type.of.Behavior, y = Sample.Size, fill = Stage.of.Change)) + 
+  geom_bar(stat="identity")
+
+# Flip the x axis and y axis so that t names of behavior can be seen
+# clearly.
+ggplot(data = TTM, aes(x = Type.of.Behavior, y = Sample.Size, fill = Stage.of.Change)) + 
+  geom_bar(stat="identity") + coord_flip()
+
+# Reorder the chunks so that they represent the logical order of stage
+# progression.
+TTM$Stage.of.Change <- factor(TTM$Stage.of.Change, levels = c("Precontemplation", 
+                                                              "Contemplation", "Preparation", "Action", "Maintenance"))
+# Re-plot the chart under the newly assigned order by changing the 'fill'
+# command.
+ggplot(data = TTM, aes(x = Type.of.Behavior, y = Sample.Size, fill = factor(Stage.of.Change))) + 
+  geom_bar(stat="identity") + coord_flip()
+
+
+
