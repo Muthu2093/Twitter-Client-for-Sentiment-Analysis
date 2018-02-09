@@ -1,5 +1,5 @@
 ## Probblem 8 Working with ggplot()
-## Dataset name - "problem8Dataset.txt" present in Test_Data folder.... Relative path already included
+## Dataset name - "ggplotDataset.txt" present in Test_Data folder.... Relative path already included
 ############# 1. Code taken from the Lab website - RCodeFeb7.txt #############
 
 smokes = c("Y","N","N","Y","N","Y","Y","Y","N","Y")
