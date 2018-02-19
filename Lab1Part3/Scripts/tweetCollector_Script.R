@@ -13,7 +13,7 @@ setup_twitter_oauth("VxJ6qp5XL3VTclBzMBsD1Ez1A", "owezT5IVRVG8nvkSHXxqq4t2McwPO6
                     ############## Collection of Tweets ###################
 ## Searching for tweets ##
 search.string <- "#flu"
-no.of.tweets <- 2000
+no.of.tweets <- 1500
 tweets <- searchTwitter(search.string, n=no.of.tweets, lang="en")
 
 ## Conversion of searched tweets to Data frame
