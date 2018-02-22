@@ -13,7 +13,7 @@ setup_twitter_oauth("VxJ6qp5XL3VTclBzMBsD1Ez1A", "owezT5IVRVG8nvkSHXxqq4t2McwPO6
                     ############## Collection of Tweets ###################
 ## Searching for tweets ##
 search.string <- "#flu"
-no.of.tweets <- 1500
+no.of.tweets <- 1300
 tweets <- searchTwitter(search.string, n=no.of.tweets, lang="en")
 
 ## Conversion of searched tweets to Data frame
@@ -82,6 +82,7 @@ for (i in tweets_With_location$location){
 location_GeoCode <- read.csv("../data_collected/location_GeoCode")
 location_GeoCode<- subset(location_GeoCode, select = -c(X)) #removing column named X
 location_GeoCode <- rbind(location_GeoCode,locations)
+location_GeoCode <- subset(location_GeoCode, location_GeoCode$lon != "")
 setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/data_collected")
 write.csv(location_GeoCode, file = "location_GeoCode") 
 setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/Scripts")
