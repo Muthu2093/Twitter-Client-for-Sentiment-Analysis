@@ -1,5 +1,5 @@
 rm(list =ls())
-
+#### SET THE WORKING DIRECTORY TO 'SCRIPTS' FOLDER IN LAB1 PART3 BEFORE RUNNING THE SCRIPT####
 ## loading libraries
 library(twitteR)
 library(ggplot2)
@@ -20,10 +20,10 @@ tweets <- searchTwitter(search.string, n=no.of.tweets, lang="en")
 tweets <- twListToDF(tweets)
 
 ## Saving collected data to a csv file - only the tweets collection this session
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/data_collected")
+setwd("../data_collected")
 Name=paste("New", no.of.tweets," Tweets Collected on ",Sys.time())
 write.csv(tweets, file = Name)
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/Scripts")
+setwd("../Scripts")
 
 # Reading all tweets collected so far
 CDF=read.csv("../data_collected/consolidated_Tweets_Total")
@@ -34,9 +34,9 @@ consolidated_Tweets_Total=rbind(CDF,tweets)
 consolidated_Tweets_Total <- unique( consolidated_Tweets_Total[ , 1:16 ] ) #remove duplicates
 
 # Saving all Tweets Collected from day 1 to csv file
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/data_collected")
+setwd("../data_collected")
 write.csv(consolidated_Tweets_Total, file = "consolidated_Tweets_Total") 
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/Scripts")
+setwd("../Scripts")
 
 
 
@@ -53,9 +53,9 @@ data_With_location <- rbind(DWL, tweets_With_location)
 data_With_location <- unique( data_With_location[ , 1:17 ] )
 
 #Saving the data with location to csv file
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/data_collected")
+setwd("../data_collected")
 write.csv(data_With_location, file = "data_With_location") 
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/Scripts")
+setwd("../Scripts")
 
 
 
@@ -83,9 +83,9 @@ location_GeoCode <- read.csv("../data_collected/location_GeoCode")
 location_GeoCode<- subset(location_GeoCode, select = -c(X)) #removing column named X
 location_GeoCode <- rbind(location_GeoCode,locations)
 location_GeoCode <- subset(location_GeoCode, location_GeoCode$lon != "")
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/data_collected")
+setwd("../data_collected")
 write.csv(location_GeoCode, file = "location_GeoCode") 
-setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part3/Scripts")
+setwd("../Scripts")
 
 
 
