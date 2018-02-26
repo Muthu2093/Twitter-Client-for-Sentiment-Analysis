@@ -79,11 +79,11 @@ for (i in tweets_With_location$location){
     }
 }
 
+setwd("../data_collected")
 location_GeoCode <- read.csv("../data_collected/location_GeoCode")
 location_GeoCode<- subset(location_GeoCode, select = -c(X)) #removing column named X
 location_GeoCode <- rbind(location_GeoCode,locations)
 location_GeoCode <- subset(location_GeoCode, location_GeoCode$lon != "")
-setwd("../data_collected")
 write.csv(location_GeoCode, file = "location_GeoCode") 
 setwd("../Scripts")
 
