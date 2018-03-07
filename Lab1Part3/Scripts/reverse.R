@@ -43,7 +43,7 @@ for (i in start:end)
     indicator <- 1
   }
   
-  if (states != 0)
+  if (indicator != 0)
   {
     states = rbind(states,temp)
   }
