@@ -23,7 +23,7 @@ end=index$i[1]+2500
 
 for (i in start:end)
 {
-  print(i)
+  # print(i)
   # Checking if we are exceeding the dimension of tweet input DF
   if (i>=nrow(location_GeoCode))
   {
