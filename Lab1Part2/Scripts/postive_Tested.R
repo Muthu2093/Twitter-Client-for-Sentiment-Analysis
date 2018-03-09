@@ -1,4 +1,5 @@
 library(reshape2)
+library(ggplot2)
 
 rm(list =ls())
 
@@ -18,7 +19,7 @@ label=c("2017W40","2017W41","2017W42","2017W43","2017W44","2017W45","2017W46","2
 colnames(data)= label
 data <- melt(data)
 
-library(ggplot2)
+
 
 label=c("Type.of.disease", "Week", "Total")
 colnames(data) <- label
