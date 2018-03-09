@@ -7,8 +7,9 @@ rm(list =ls())
 setwd("/Users/muthuvel/Documents/GitHub/Twitter-client-for-Data-Collection-and-Exploratory-Data-Analysis-/Lab1Part2/Scripts")
 
 data <- read.csv("../Data/Postive Tested/Workbook1.csv")
-head(data)
-tail(data)
+data <- data[ -c(5) ]
+data <- data[c(1,5,2:4,6:9)]
+
 data <- subset( data, select = -Total...Tested )
 data <- data[-c(18, 19, 20, 21, 22), ]
 data <- t(data)
@@ -24,8 +25,15 @@ data <- melt(data)
 label=c("Type.of.disease", "Week", "Total")
 colnames(data) <- label
 ggplot(data, aes(x=Week, y=Total, fill=Type.of.disease)) + 
-  geom_bar(stat="identity") +
-  xlab("\n Weeks(2017: 41-52, 2018:01-04)") +
-  ylab("Total number of postive cases\n") +
-  theme_bw()
+  geom_bar(stat="identity", colour = "black") +
+  xlab("\n Weeks") +
+  ylab("Number of Postive Specimens\n") +
+  scale_fill_manual(values = c("orange","red","blue","yellow","green4","yellow3", "limegreen")) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        axis.text.x = element_text(face="bold", color="black",size=8, angle=90),
+        axis.text.y = element_text(face="bold", color="black",size=8),
+        legend.position=c(0.4, 0.7))+ 
+        scale_y_continuous(limits = c(0,4000), breaks = c(500*c(1:10)))
+  ggtitle("Influenza National Summary of Postive Tests Reported to CDC by U.S Public Health")
 

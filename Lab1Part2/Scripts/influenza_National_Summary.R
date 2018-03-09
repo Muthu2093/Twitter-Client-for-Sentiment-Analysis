@@ -25,14 +25,15 @@ plotS1 <- plotS1 + geom_line(data=linedata2, aes(x=data.Week,y=data.Percent.Posi
 plotS1 <- plotS1 + geom_line(data=linedata3, aes(x=data.Week,y=data.Percent.Positive.B *600, group=1, colour="% Postive Flu B"), 
   linetype="dashed", size =1.0)
 plotS1 <- plotS1 + scale_y_continuous(sec.axis = sec_axis(~./600, name = "Percent Positive [%]"), 
-                                      limit = c(0, 20000)) +
+                                      limit = c(0, 20000),
+                                      breaks = c(2000*c(1:10))) +
   scale_color_manual(values = c('Percent Postive' = 'black', '% Postive Flu A' = 'tomato', '% Postive Flu B'= 'green2'), guides(fill = ""))
 plotS1 <- plotS1 + theme_bw() + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text.x = element_text(face="bold", color="black",size=8, angle=90),
         axis.text.y = element_text(face="bold", color="black",size=8),
         legend.position=c(0.4, 0.7)) +
-  ggtile("Influenza National Summary of Postive Tests Reported to CDC by U.S Clinical Laboratories")
+  ggtitle("Influenza National Summary of Postive Tests Reported to CDC by U.S Clinical Laboratories")
   
 
 

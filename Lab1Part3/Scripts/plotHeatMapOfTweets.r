@@ -52,7 +52,8 @@ p <- ggplot(temp, aes(map_id = state)) +
   coord_map() +
   #scale_color_brewer(palette ="Spectral") +
   #scale_color_manual(palette = heat.colors(10))
-  scale_fill_gradient2(low="green", mid="yellow", high="red3", midpoint = mean(temp$count)) +
+  scale_fill_gradient2(low="green", mid="yellow", high="red3", midpoint = mean(temp$count), guides(fill = "Number of Tweets"), limits=c(0,max(temp$count)+100), breaks=c(0,50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000)) +
+  guides(fill = guide_colorbar(barwidth = 1.5, barheight = 25)) +
   scale_x_continuous(breaks = NULL) + 
   scale_y_continuous(breaks = NULL) +
   labs(x = "", y = "") +

@@ -23,14 +23,27 @@ data("fifty_states") # this line is optional due to lazy data loading
 
 data$STATENAME <- unlist(data$STATENAME)
 data$ACTIVITY.LEVEL=as.numeric(data$ACTIVITY.LEVEL)
+#vec <- c("0"="white",
+         #"1"="yellow2",
+  #       "2"="yellow2",
+   #      "3"="yellowgreen",
+    #     "4"="palegreen",
+     #    "5"="green",
+      #   "6"="green2",
+       #  "7"="green3",
+        # "8"="orange3",
+         #"9"="orangered",
+         #"10"="red3")
 
 # map_id creates the aesthetic mapping to the state name column in your data
 p <- ggplot(data, aes(map_id = STATENAME)) + 
   geom_map(aes(fill = ACTIVITY.LEVEL), map = fifty_states, color = "black") + 
   expand_limits(x = fifty_states$long, y = fifty_states$lat) +
   coord_map() +
+  #scale_fill_manual <- (values = vec) +
   #scale_color_brewer(palette = "Spectral") +
-  scale_fill_gradient2(low="yellow1", mid = "green", high="red2", midpoint = 5) +
+  scale_fill_gradient2(low="yellow1", mid = "green", high="red2", midpoint = 5, guides(fill = "Activity Level"), limits=c(0,10), breaks=c(0,1,2,3,4,5,6,7,8,9,10)) +
+  guides(fill = guide_colorbar(barwidth = 1.5, barheight = 20)) +
   scale_x_continuous(breaks = NULL) + 
   scale_y_continuous(breaks = NULL) +
   labs(x = "", y = "") +
