@@ -32,6 +32,6 @@ ggplot(data, aes(x=Week, y=Total, fill=Type.of.disease)) +
         axis.text.x = element_text(face="bold", color="black",size=8, angle=90),
         axis.text.y = element_text(face="bold", color="black",size=8),
         legend.position=c(0.4, 0.7))+ 
-        scale_y_continuous(limits = c(0,4000), breaks = c(500*c(1:10)))
-  ggtitle("Influenza National Summary of Postive Tests Reported to CDC by U.S Public Health")
+        scale_y_continuous(limits = c(0,4000), breaks = c(500*c(1:10))) +
+ggtitle("Influenza National Summary of Postive Tests Reported to CDC by U.S Public Health")
 

@@ -16,7 +16,7 @@ bp_1<- ggplot(mydata_1, aes(x="", y=Number, fill= mydata_1$Genetic_Group))+
   theme(plot.title=element_text(hjust=0.5, size = 8))+
   xlab("")+
   ylab("")
-  
+
 
 pie_1 <- bp_1 + coord_polar("y", start=250) +  
   theme_minimal()+ 
@@ -36,8 +36,8 @@ bp_2<- ggplot(mydata_2, aes(x="", y=Number, fill= mydata_2$Genetic_Group))+
   theme(plot.title=element_text(hjust=0.5, size = 8)) +
   xlab("")+
   ylab("")
-  
-  
+
+
 pie_2 <- bp_2 + coord_polar("y", start=250) + 
   theme(panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank())+ 
@@ -56,7 +56,7 @@ bp_3<- ggplot(mydata_3, aes(x="", y=Number, fill= mydata_3$Genetic_Group))+
   theme(plot.title=element_text(hjust=0.5, size = 8)) +
   xlab("")+
   ylab("")
-  
+
 pie_3 <- bp_3 + coord_polar("y", start=550) + 
   theme(panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank())+ 
@@ -100,7 +100,7 @@ bp<- ggplot(df, aes(x="", y=value, fill=group))+
   ylab("")
 
 a <- plot.new()
-pie <- bp + coord_polar("y", start=0) #+guides(fill=FALSE) 
+pie <- bp + coord_polar("y", start=0) +guides(fill=FALSE) 
 
 
 ## Grouping all charts into one using ggarrange
