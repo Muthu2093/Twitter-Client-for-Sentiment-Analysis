@@ -1,4 +1,6 @@
-## Reverse Geocoding for extracting the states names for heatmap from the tweets gathered
+## Collects reverseGeocodes and extract the state name from GeoCodes collected
+## Automatically fetches 2500 states through revergeocode everytime you run the script
+## Appends the final states to statesFrequency file
 
 library(twitteR)
 library(ggplot2)
@@ -11,7 +13,7 @@ location_GeoCode <- read.csv("../data_collected/location_GeoCode")
 location_GeoCode<- subset(location_GeoCode, select = -c(X)) #removing column named X
 setwd("../Scripts")
 
-## Reading the starting index of query
+## Reading the starting index of query (changed everytime you run into a file)
 setwd("../data_collected")
 index <- read.csv("../data_collected/index")
 index <- subset(index, select = -c(X)) #removing column named X

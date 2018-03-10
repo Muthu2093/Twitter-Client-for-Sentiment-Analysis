@@ -1,6 +1,9 @@
 rm(list =ls())
-#### SET THE WORKING DIRECTORY TO 'SCRIPTS' FOLDER IN LAB1 PART3 BEFORE RUNNING THE SCRIPT####
-## loading libraries
+#### Code to collect tweets##
+###SET THE WORKING DIRECTORY TO 'SCRIPTS' FOLDER IN LAB1 PART3 BEFORE RUNNING THE SCRIPT####
+## All tweets collected are filter and appended to csv files in data folder automatically
+## Geocodes are fetected for all tweet and saved in location_GeoCode.csv file - used for later plotting
+
 library(twitteR)
 library(ggplot2)
 library(ggmap)
@@ -56,8 +59,6 @@ data_With_location <- unique( data_With_location[ , 1:17 ] )
 setwd("../data_collected")
 write.csv(data_With_location, file = "data_With_location") 
 setwd("../Scripts")
-
-
 
 
 
